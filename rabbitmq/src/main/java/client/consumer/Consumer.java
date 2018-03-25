@@ -2,9 +2,8 @@ package client.consumer;
 import client.RabbitMQConfig;
 import com.rabbitmq.client.*;
 import java.io.IOException;
-import java.util.concurrent.TimeoutException;
 public class Consumer {
-    public static void main(String[] args) throws IOException, TimeoutException {
+    public static void main(String[] args) {
         Connection connection;
         Channel channel;
         try {
@@ -47,8 +46,7 @@ public class Consumer {
             System.out.println("consumer error");
         }
         finally {
-
-
+            System.out.println("保持监听，不关闭connection");
         }
     }
     }
